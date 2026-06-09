@@ -1,6 +1,6 @@
 # LogTriage Transformer Evaluation Report
 
-Fine-tuned RoBERTa-family encoder (`AutoModelForSequenceClassification`) on log session text.
+Fine-tuned RoBERTa-family encoder (`distilroberta-base`) on log session text (post-validation fix).
 One classifier is trained per output field, matching the local baseline protocol.
 
 ## 1. Run configuration
@@ -12,26 +12,27 @@ One classifier is trained per output field, matching the local baseline protocol
 - **Test examples:** 75 (limit=75)
 - **Epochs:** 2, batch size=8, max_length=256
 
-Full dataset has 3500 train / 750 test. This run may use a subset for CPU-friendly training.
+Full dataset has 3500 train / 750 test. This run uses a CPU-friendly subset as reported in slides.
 
 ## 2. Compact results
 
 | Model | Cause F1 | Service F1 | Severity F1 | Action F1 | Full exact | Evidence F1 |
 |-------|----------|------------|-------------|-----------|------------|-------------|
-| RoBERTa (distilroberta-base) | 0.788 | 0.176 | 0.129 | 0.750 | 0.080 | 0.873 |
+| RoBERTa (distilroberta-base) | 0.704 | 0.186 | 0.129 | 0.750 | 6.7% | 0.877 |
 
 ## 3. Full metrics
 
 | Model | Cause Acc | Cause F1 | Service Acc | Service F1 | Severity Acc | Severity F1 | Action Acc | Action F1 | Full exact | Evid P | Evid R | Evid F1 |
 |-------|-----------|----------|-------------|------------|--------------|-------------|------------|-----------|------------|--------|--------|---------|
-| RoBERTa (distilroberta-base) | 0.787 | 0.788 | 0.440 | 0.176 | 0.347 | 0.129 | 0.747 | 0.750 | 0.080 | 0.813 | 0.943 | 0.873 |
+| RoBERTa (distilroberta-base) | 0.720 | 0.704 | 0.453 | 0.186 | 0.347 | 0.129 | 0.747 | 0.750 | 6.7% | 0.817 | 0.947 | 0.877 |
 
 ## 4. Key findings
 
-- **Full exact match:** 8.0% on n=75 test sessions
+- **Full exact match:** 6.7% on n=75 test sessions
 - **Hardest field:** severity macro-F1 = 0.129
+- Cause F1 dropped slightly vs. pre-fix run (0.704 vs 0.788) after leakage removal
 - Evidence-line F1 uses the same heuristic as other baselines (not a learned evidence head).
-- Compare with TF-IDF / LLM reports; subset sizes may differ.
+- Compare with TF-IDF / LLM reports; subset sizes differ.
 
 ## 5. Output artifacts
 
@@ -41,6 +42,4 @@ Full dataset has 3500 train / 750 test. This run may use a subset for CPU-friend
 | `results/transformer_metrics_all.csv` | Full metrics row |
 | `results/transformer_predictions_test.jsonl` | Test predictions |
 | `results/transformer_run_metadata.json` | Run configuration |
-| `results/transformer_error_examples.json` | Sample errors |
 | `models/transformer_*` | Saved per-field checkpoints |
-| `visuals/transformer_model_comparison.png` | Macro-F1 bar chart |

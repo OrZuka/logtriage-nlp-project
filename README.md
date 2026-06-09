@@ -67,7 +67,23 @@ Prompt templates:
 - `prompts/zero_shot_prompt.txt`
 - `prompts/few_shot_prompt.txt`
 
-**Validation** (`src/validate_data.py`) checks schema, taxonomy labels, label coverage, cause–action consistency, evidence-line references, duplicates, and noise distribution.
+**Validation** (`src/validate_data.py`) checks:
+
+- JSON/schema and taxonomy labels
+- Label coverage and cause–action consistency
+- Evidence-line indices and content support
+- Label leakage (verbatim taxonomy strings in logs)
+- Noise-level consistency via measurable properties (log length, distractor INFO/WARN lines, unrelated services, evidence ratio)
+- Near-duplicate sessions
+
+**External realism check** (`src/compare_external_logs.py`) compares structural log features against a LogHub HDFS reference sample.
+
+```bash
+python src/validate_data.py
+python src/compare_external_logs.py
+```
+
+Reports: `results/data_validation_report.json`, `results/external_log_comparison.json`, `docs/Data_Validation_Report.md`.
 
 > `src/generate_data.py` is a stub; the pre-generated JSONL files in `data/` are the canonical dataset for reproducible experiments.
 
@@ -109,6 +125,8 @@ OPENAI_API_KEY=sk-your-key-here
 ### 1. Validate data
 
 ```bash
+python src/validate_data.py
+python src/compare_external_logs.py
 python src/validate_data.py data/logtriage_train.jsonl
 python src/validate_data.py data/logtriage_valid.jsonl
 python src/validate_data.py data/logtriage_test.jsonl
@@ -183,31 +201,31 @@ python src/train_transformer.py --model distilroberta-base --train-limit 300 --t
 
 > **Important:** baseline models use the **full test set (n=750)**. LLM and transformer runs use **smaller subsets** due to API cost and CPU time. Compare models within the same evaluation size.
 
-### Local baselines (test n=750)
+### Local baselines (test n=750, post-validation fix)
 
 | Model | Cause F1 | Service F1 | Severity F1 | Action F1 | Full Exact | Evidence F1 |
 |-------|----------|------------|-------------|-----------|------------|-------------|
 | Majority | 0.02 | 0.07 | 0.15 | 0.02 | 0.0% | 0.82 |
 | Rules | 0.80 | 0.25 | 0.48 | 0.80 | 17.5% | 0.86 |
-| TF-IDF LogReg | 1.00 | 1.00 | 0.58 | 1.00 | 54.4% | 0.89 |
-| **TF-IDF SVM** | **1.00** | **1.00** | **0.65** | **1.00** | **57.2%** | **0.89** |
+| TF-IDF LogReg | 1.00 | 1.00 | 0.59 | 1.00 | 54.5% | 0.89 |
+| **TF-IDF SVM** | **1.00** | **1.00** | **0.64** | **1.00** | **56.1%** | **0.89** |
 | TF-IDF NB | 1.00 | 1.00 | 0.42 | 1.00 | 49.2% | 0.89 |
-| Char SVM | 1.00 | 1.00 | 0.61 | 1.00 | 55.2% | 0.89 |
+| Char SVM | 1.00 | 1.00 | 0.61 | 1.00 | 55.6% | 0.89 |
 
-**Best full exact match (baselines):** TF-IDF SVM at 57.2%. **Hardest field:** severity (best macro-F1 ~0.65).
+**Best full exact match (baselines):** TF-IDF SVM at 56.1%. **Hardest field:** severity (best macro-F1 ~0.64).
 
-### LLM baselines (test n=30)
+### LLM baselines (test n=30, post-validation fix)
 
 | Model | Cause F1 | Service F1 | Severity F1 | Action F1 | Full Exact | Valid JSON |
 |-------|----------|------------|-------------|-----------|------------|------------|
 | LLM zero-shot | 1.00 | 0.73 | 0.44 | 1.00 | 30.0% | 100% |
 | LLM few-shot | 1.00 | 1.00 | 0.64 | 1.00 | 53.3% | 100% |
 
-### DistilRoBERTa (test n=75, CPU subset)
+### DistilRoBERTa (test n=75, CPU subset, post-validation fix)
 
 | Model | Cause F1 | Service F1 | Severity F1 | Action F1 | Full Exact | Evidence F1 |
 |-------|----------|------------|-------------|-----------|------------|-------------|
-| DistilRoBERTa | 0.79 | 0.18 | 0.13 | 0.75 | 8.0% | 0.87 |
+| DistilRoBERTa | 0.70 | 0.19 | 0.13 | 0.75 | 6.7% | 0.88 |
 
 Full tables and analysis:
 
@@ -251,7 +269,8 @@ logtriage-nlp-project/
 | `src/train_baselines.py` | Train and evaluate 6 local baselines |
 | `src/run_llm_baseline.py` | Zero-shot / few-shot LLM evaluation |
 | `src/train_transformer.py` | Fine-tune DistilRoBERTa per field |
-| `src/validate_data.py` | Dataset schema and taxonomy validation |
+| `src/validate_data.py` | Dataset schema, leakage, noise, and quality validation |
+| `src/compare_external_logs.py` | Structural comparison vs LogHub reference sample |
 | `src/evaluate.py` | Shared evaluation utilities |
 
 ## Limitations

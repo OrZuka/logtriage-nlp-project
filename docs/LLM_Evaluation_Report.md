@@ -1,6 +1,6 @@
 # LogTriage LLM Evaluation Report
 
-Small-sample evaluation using the OpenAI API on a held-out test subset.
+Small-sample evaluation using the OpenAI API on a held-out test subset (post-validation fix).
 
 ## 1. Run configuration
 
@@ -13,8 +13,8 @@ Full test set size is 750; this report uses a **small subset only** to limit API
 
 | Model | OpenAI model | N | Cause F1 | Service F1 | Severity F1 | Action F1 | Full exact | Evidence F1 | Valid JSON |
 |-------|--------------|---|----------|------------|-------------|-----------|------------|-------------|------------|
-| LLM zero-shot | gpt-4o-mini | 30 | 1.000 | 0.734 | 0.441 | 1.000 | 0.300 | 0.942 | 1.000 |
-| LLM few-shot | gpt-4o-mini | 30 | 1.000 | 1.000 | 0.643 | 1.000 | 0.533 | 0.990 | 1.000 |
+| LLM zero-shot | gpt-4o-mini | 30 | 1.000 | 0.734 | 0.441 | 1.000 | 30.0% | 0.942 | 100% |
+| LLM few-shot | gpt-4o-mini | 30 | 1.000 | 1.000 | 0.643 | 1.000 | 53.3% | 0.990 | 100% |
 
 ## 3. Full metrics
 
@@ -26,7 +26,7 @@ Full test set size is 750; this report uses a **small subset only** to limit API
 ## 4. Key findings
 
 - **Best full exact (LLM subset):** LLM few-shot (53.3%)
-- **Valid JSON rate:** zero-shot=1.0
+- **Valid JSON rate:** 100% for both modes
 - Compare against local baselines in `docs/Model_Evaluation_Report.md` (full 750 test set).
 - LLM subset scores are indicative only; rerun with `--limit 0` for full evaluation when budget allows.
 
@@ -38,5 +38,3 @@ Full test set size is 750; this report uses a **small subset only** to limit API
 | `results/llm_*_predictions.jsonl` | Raw and parsed predictions |
 | `results/llm_*_run_metadata.json` | Run configuration |
 | `results/llm_baseline_metrics_compact.csv` | Combined compact table |
-| `results/llm_error_examples.json` | Sample misclassifications |
-| `visuals/llm_model_comparison.png` | Macro-F1 comparison chart |

@@ -1,0 +1,61 @@
+{
+  "cause_to_action": {
+    "normal_no_issue": "no_action_monitor",
+    "authentication_token_expired": "rotate_or_check_credentials",
+    "payment_gateway_timeout": "check_payment_gateway_and_retry",
+    "database_connection_pool_exhaustion": "scale_database_pool",
+    "database_query_failure": "check_database_query",
+    "inventory_out_of_sync": "sync_inventory_and_retry",
+    "message_queue_backlog": "scale_queue_consumers",
+    "configuration_error": "rollback_or_fix_configuration",
+    "resource_exhaustion": "scale_resource_or_restart_service",
+    "deployment_regression": "rollback_deployment"
+  },
+  "required_fields": [
+    "session_id",
+    "domain",
+    "noise_level",
+    "log_format",
+    "logs",
+    "labels"
+  ],
+  "required_label_fields": [
+    "failure_cause",
+    "affected_service",
+    "severity",
+    "recommended_action",
+    "evidence_lines"
+  ],
+  "allowed_noise_levels": ["none", "low", "medium", "high"],
+  "allowed_log_formats": ["plain", "json_like", "mixed"],
+  "noise_level_ranges": {
+    "none": {
+      "max_log_lines": 5,
+      "max_distractors": 2,
+      "max_unrelated_services": 3
+    },
+    "low": {
+      "min_log_lines": 4,
+      "max_log_lines": 9,
+      "max_distractors": 6,
+      "max_unrelated_services": 5
+    },
+    "medium": {
+      "min_log_lines": 5,
+      "max_log_lines": 11,
+      "min_distractors": 1,
+      "max_distractors": 8,
+      "max_unrelated_services": 6
+    },
+    "high": {
+      "min_log_lines": 7,
+      "min_distractors": 3,
+      "max_unrelated_services": 8
+    }
+  },
+  "leakage_patterns": [
+    "reason={failure_cause}",
+    "failure_cause={failure_cause}",
+    "recommended_action={recommended_action}"
+  ]
+}

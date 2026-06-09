@@ -1,0 +1,91 @@
+{
+  "reference_dataset": "LogHub HDFS 2k sample",
+  "reference_path": "data\\external_refs\\loghub_hdfs_2k.log",
+  "synthetic_profile": {
+    "num_lines": 38342,
+    "avg_line_length": 98.76,
+    "median_line_length": 97.0,
+    "avg_token_count": 7.65,
+    "timestamp_rate": 1.0,
+    "component_like_rate": 0.026,
+    "json_like_rate": 0.0,
+    "key_value_rate": 0.915,
+    "level_distribution": {
+      "INFO": 21381,
+      "WARN": 6461,
+      "ERROR": 10500
+    }
+  },
+  "external_profile": {
+    "num_lines": 2000,
+    "avg_line_length": 141.92,
+    "median_line_length": 140.0,
+    "avg_token_count": 10.19,
+    "timestamp_rate": 1.0,
+    "component_like_rate": 1.0,
+    "json_like_rate": 0.0,
+    "key_value_rate": 0.0,
+    "level_distribution": {
+      "INFO": 1920,
+      "WARN": 80
+    }
+  },
+  "comparison": {
+    "metric_comparison": {
+      "avg_line_length": {
+        "synthetic": 98.76,
+        "external_loghub_hdfs": 141.92,
+        "abs_diff": 43.16,
+        "within_30pct_of_external": false
+      },
+      "avg_token_count": {
+        "synthetic": 7.65,
+        "external_loghub_hdfs": 10.19,
+        "abs_diff": 2.54,
+        "within_30pct_of_external": true
+      },
+      "timestamp_rate": {
+        "synthetic": 1.0,
+        "external_loghub_hdfs": 1.0,
+        "abs_diff": 0.0,
+        "within_30pct_of_external": true
+      },
+      "component_like_rate": {
+        "synthetic": 0.026,
+        "external_loghub_hdfs": 1.0,
+        "abs_diff": 0.974,
+        "within_30pct_of_external": false
+      },
+      "key_value_rate": {
+        "synthetic": 0.915,
+        "external_loghub_hdfs": 0.0,
+        "abs_diff": 0.915,
+        "within_30pct_of_external": true
+      },
+      "level_distribution_normalized": {
+        "ERROR": {
+          "synthetic": 0.274,
+          "external_loghub_hdfs": 0.0
+        },
+        "INFO": {
+          "synthetic": 0.558,
+          "external_loghub_hdfs": 0.96
+        },
+        "WARN": {
+          "synthetic": 0.169,
+          "external_loghub_hdfs": 0.04
+        }
+      }
+    },
+    "notes": [
+      "LogHub HDFS is a different domain (distributed filesystem) but provides a public reference for timestamped, leveled log structure.",
+      "Synthetic LogTriage logs intentionally include JSON-like and key-value microservice formats not present in HDFS.",
+      "Similarity is assessed on structural features (timestamps, severity levels, token length), not label semantics."
+    ]
+  },
+  "realism_assessment": {
+    "checks_passed": 3,
+    "checks_total": 4,
+    "overall": "acceptable_structural_similarity"
+  }
+}

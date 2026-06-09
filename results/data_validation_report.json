@@ -1,10 +1,444 @@
 {
-  "num_records": 5000,
-  "issues": 0,
-  "issue_examples": [],
   "splits": {
-    "train": 3500,
-    "valid": 750,
-    "test": 750
+    "train": {
+      "num_records": 3500,
+      "bad_records": 0,
+      "issue_type_counts": {},
+      "records_with_label_leakage": 0,
+      "records_with_noise_mismatch": 0,
+      "label_coverage": {
+        "failure_cause": {
+          "seen": 10,
+          "expected": 10,
+          "missing_labels": [],
+          "counts": {
+            "database_connection_pool_exhaustion": 350,
+            "database_query_failure": 350,
+            "message_queue_backlog": 350,
+            "authentication_token_expired": 350,
+            "payment_gateway_timeout": 350,
+            "normal_no_issue": 350,
+            "configuration_error": 350,
+            "resource_exhaustion": 350,
+            "deployment_regression": 350,
+            "inventory_out_of_sync": 350
+          }
+        },
+        "affected_service": {
+          "seen": 7,
+          "expected": 12,
+          "missing_labels": [
+            "cart-service",
+            "order-service",
+            "shipping-service",
+            "notification-service",
+            "catalog-service"
+          ],
+          "counts": {
+            "database-service": 700,
+            "queue-service": 350,
+            "auth-service": 350,
+            "payment-service": 350,
+            "gateway-service": 350,
+            "checkout-service": 1050,
+            "inventory-service": 350
+          }
+        },
+        "severity": {
+          "seen": 4,
+          "expected": 4,
+          "missing_labels": [],
+          "counts": {
+            "critical": 802,
+            "medium": 805,
+            "high": 1543,
+            "low": 350
+          }
+        },
+        "recommended_action": {
+          "seen": 10,
+          "expected": 10,
+          "missing_labels": [],
+          "counts": {
+            "scale_database_pool": 350,
+            "check_database_query": 350,
+            "scale_queue_consumers": 350,
+            "rotate_or_check_credentials": 350,
+            "check_payment_gateway_and_retry": 350,
+            "no_action_monitor": 350,
+            "rollback_or_fix_configuration": 350,
+            "scale_resource_or_restart_service": 350,
+            "rollback_deployment": 350,
+            "sync_inventory_and_retry": 350
+          }
+        }
+      },
+      "duplicates": {
+        "duplicate_groups": 0,
+        "duplicate_sessions": 0,
+        "examples": {}
+      },
+      "noise_metrics_by_level": {
+        "medium": {
+          "avg_log_lines": 8.2,
+          "avg_evidence_ratio": 0.4,
+          "avg_unrelated_services": 2.04,
+          "avg_distractors": 4.9,
+          "avg_errors_outside_evidence": 0.0
+        },
+        "low": {
+          "avg_log_lines": 6.19,
+          "avg_evidence_ratio": 0.53,
+          "avg_unrelated_services": 1.38,
+          "avg_distractors": 2.91,
+          "avg_errors_outside_evidence": 0.0
+        },
+        "high": {
+          "avg_log_lines": 10.2,
+          "avg_evidence_ratio": 0.33,
+          "avg_unrelated_services": 2.53,
+          "avg_distractors": 6.88,
+          "avg_errors_outside_evidence": 0.0
+        },
+        "none": {
+          "avg_log_lines": 4.22,
+          "avg_evidence_ratio": 0.79,
+          "avg_unrelated_services": 0.67,
+          "avg_distractors": 0.9,
+          "avg_errors_outside_evidence": 0.0
+        }
+      },
+      "sample_bad_records": []
+    },
+    "valid": {
+      "num_records": 750,
+      "bad_records": 0,
+      "issue_type_counts": {},
+      "records_with_label_leakage": 0,
+      "records_with_noise_mismatch": 0,
+      "label_coverage": {
+        "failure_cause": {
+          "seen": 10,
+          "expected": 10,
+          "missing_labels": [],
+          "counts": {
+            "database_query_failure": 75,
+            "message_queue_backlog": 75,
+            "authentication_token_expired": 75,
+            "inventory_out_of_sync": 75,
+            "deployment_regression": 75,
+            "payment_gateway_timeout": 75,
+            "database_connection_pool_exhaustion": 75,
+            "normal_no_issue": 75,
+            "configuration_error": 75,
+            "resource_exhaustion": 75
+          }
+        },
+        "affected_service": {
+          "seen": 7,
+          "expected": 12,
+          "missing_labels": [
+            "cart-service",
+            "order-service",
+            "shipping-service",
+            "notification-service",
+            "catalog-service"
+          ],
+          "counts": {
+            "database-service": 150,
+            "queue-service": 75,
+            "auth-service": 75,
+            "inventory-service": 75,
+            "checkout-service": 225,
+            "payment-service": 75,
+            "gateway-service": 75
+          }
+        },
+        "severity": {
+          "seen": 4,
+          "expected": 4,
+          "missing_labels": [],
+          "counts": {
+            "medium": 180,
+            "high": 323,
+            "critical": 172,
+            "low": 75
+          }
+        },
+        "recommended_action": {
+          "seen": 10,
+          "expected": 10,
+          "missing_labels": [],
+          "counts": {
+            "check_database_query": 75,
+            "scale_queue_consumers": 75,
+            "rotate_or_check_credentials": 75,
+            "sync_inventory_and_retry": 75,
+            "rollback_deployment": 75,
+            "check_payment_gateway_and_retry": 75,
+            "scale_database_pool": 75,
+            "no_action_monitor": 75,
+            "rollback_or_fix_configuration": 75,
+            "scale_resource_or_restart_service": 75
+          }
+        }
+      },
+      "duplicates": {
+        "duplicate_groups": 0,
+        "duplicate_sessions": 0,
+        "examples": {}
+      },
+      "noise_metrics_by_level": {
+        "high": {
+          "avg_log_lines": 10.18,
+          "avg_evidence_ratio": 0.32,
+          "avg_unrelated_services": 2.56,
+          "avg_distractors": 6.89,
+          "avg_errors_outside_evidence": 0.0
+        },
+        "none": {
+          "avg_log_lines": 4.19,
+          "avg_evidence_ratio": 0.78,
+          "avg_unrelated_services": 0.78,
+          "avg_distractors": 0.92,
+          "avg_errors_outside_evidence": 0.0
+        },
+        "low": {
+          "avg_log_lines": 6.18,
+          "avg_evidence_ratio": 0.53,
+          "avg_unrelated_services": 1.33,
+          "avg_distractors": 2.9,
+          "avg_errors_outside_evidence": 0.0
+        },
+        "medium": {
+          "avg_log_lines": 8.23,
+          "avg_evidence_ratio": 0.4,
+          "avg_unrelated_services": 2.0,
+          "avg_distractors": 4.9,
+          "avg_errors_outside_evidence": 0.0
+        }
+      },
+      "sample_bad_records": []
+    },
+    "test": {
+      "num_records": 750,
+      "bad_records": 0,
+      "issue_type_counts": {},
+      "records_with_label_leakage": 0,
+      "records_with_noise_mismatch": 0,
+      "label_coverage": {
+        "failure_cause": {
+          "seen": 10,
+          "expected": 10,
+          "missing_labels": [],
+          "counts": {
+            "configuration_error": 75,
+            "payment_gateway_timeout": 75,
+            "deployment_regression": 75,
+            "message_queue_backlog": 75,
+            "database_connection_pool_exhaustion": 75,
+            "resource_exhaustion": 75,
+            "inventory_out_of_sync": 75,
+            "database_query_failure": 75,
+            "authentication_token_expired": 75,
+            "normal_no_issue": 75
+          }
+        },
+        "affected_service": {
+          "seen": 7,
+          "expected": 12,
+          "missing_labels": [
+            "cart-service",
+            "order-service",
+            "shipping-service",
+            "notification-service",
+            "catalog-service"
+          ],
+          "counts": {
+            "checkout-service": 225,
+            "payment-service": 75,
+            "queue-service": 75,
+            "database-service": 150,
+            "inventory-service": 75,
+            "auth-service": 75,
+            "gateway-service": 75
+          }
+        },
+        "severity": {
+          "seen": 4,
+          "expected": 4,
+          "missing_labels": [],
+          "counts": {
+            "critical": 181,
+            "medium": 178,
+            "high": 316,
+            "low": 75
+          }
+        },
+        "recommended_action": {
+          "seen": 10,
+          "expected": 10,
+          "missing_labels": [],
+          "counts": {
+            "rollback_or_fix_configuration": 75,
+            "check_payment_gateway_and_retry": 75,
+            "rollback_deployment": 75,
+            "scale_queue_consumers": 75,
+            "scale_database_pool": 75,
+            "scale_resource_or_restart_service": 75,
+            "sync_inventory_and_retry": 75,
+            "check_database_query": 75,
+            "rotate_or_check_credentials": 75,
+            "no_action_monitor": 75
+          }
+        }
+      },
+      "duplicates": {
+        "duplicate_groups": 0,
+        "duplicate_sessions": 0,
+        "examples": {}
+      },
+      "noise_metrics_by_level": {
+        "medium": {
+          "avg_log_lines": 8.2,
+          "avg_evidence_ratio": 0.4,
+          "avg_unrelated_services": 2.05,
+          "avg_distractors": 4.89,
+          "avg_errors_outside_evidence": 0.0
+        },
+        "low": {
+          "avg_log_lines": 6.22,
+          "avg_evidence_ratio": 0.53,
+          "avg_unrelated_services": 1.34,
+          "avg_distractors": 2.92,
+          "avg_errors_outside_evidence": 0.0
+        },
+        "high": {
+          "avg_log_lines": 10.21,
+          "avg_evidence_ratio": 0.32,
+          "avg_unrelated_services": 2.68,
+          "avg_distractors": 6.91,
+          "avg_errors_outside_evidence": 0.0
+        },
+        "none": {
+          "avg_log_lines": 4.12,
+          "avg_evidence_ratio": 0.79,
+          "avg_unrelated_services": 0.72,
+          "avg_distractors": 0.86,
+          "avg_errors_outside_evidence": 0.0
+        }
+      },
+      "sample_bad_records": []
+    }
+  },
+  "combined": {
+    "num_records": 5000,
+    "bad_records": 0,
+    "issue_type_counts": {},
+    "records_with_label_leakage": 0,
+    "records_with_noise_mismatch": 0,
+    "label_coverage": {
+      "failure_cause": {
+        "seen": 10,
+        "expected": 10,
+        "missing_labels": [],
+        "counts": {
+          "database_connection_pool_exhaustion": 500,
+          "database_query_failure": 500,
+          "message_queue_backlog": 500,
+          "authentication_token_expired": 500,
+          "payment_gateway_timeout": 500,
+          "normal_no_issue": 500,
+          "configuration_error": 500,
+          "resource_exhaustion": 500,
+          "deployment_regression": 500,
+          "inventory_out_of_sync": 500
+        }
+      },
+      "affected_service": {
+        "seen": 7,
+        "expected": 12,
+        "missing_labels": [
+          "cart-service",
+          "order-service",
+          "shipping-service",
+          "notification-service",
+          "catalog-service"
+        ],
+        "counts": {
+          "database-service": 1000,
+          "queue-service": 500,
+          "auth-service": 500,
+          "payment-service": 500,
+          "gateway-service": 500,
+          "checkout-service": 1500,
+          "inventory-service": 500
+        }
+      },
+      "severity": {
+        "seen": 4,
+        "expected": 4,
+        "missing_labels": [],
+        "counts": {
+          "critical": 1155,
+          "medium": 1163,
+          "high": 2182,
+          "low": 500
+        }
+      },
+      "recommended_action": {
+        "seen": 10,
+        "expected": 10,
+        "missing_labels": [],
+        "counts": {
+          "scale_database_pool": 500,
+          "check_database_query": 500,
+          "scale_queue_consumers": 500,
+          "rotate_or_check_credentials": 500,
+          "check_payment_gateway_and_retry": 500,
+          "no_action_monitor": 500,
+          "rollback_or_fix_configuration": 500,
+          "scale_resource_or_restart_service": 500,
+          "rollback_deployment": 500,
+          "sync_inventory_and_retry": 500
+        }
+      }
+    },
+    "duplicates": {
+      "duplicate_groups": 0,
+      "duplicate_sessions": 0,
+      "examples": {}
+    },
+    "noise_metrics_by_level": {
+      "medium": {
+        "avg_log_lines": 8.2,
+        "avg_evidence_ratio": 0.4,
+        "avg_unrelated_services": 2.04,
+        "avg_distractors": 4.9,
+        "avg_errors_outside_evidence": 0.0
+      },
+      "low": {
+        "avg_log_lines": 6.19,
+        "avg_evidence_ratio": 0.53,
+        "avg_unrelated_services": 1.36,
+        "avg_distractors": 2.91,
+        "avg_errors_outside_evidence": 0.0
+      },
+      "high": {
+        "avg_log_lines": 10.2,
+        "avg_evidence_ratio": 0.32,
+        "avg_unrelated_services": 2.56,
+        "avg_distractors": 6.88,
+        "avg_errors_outside_evidence": 0.0
+      },
+      "none": {
+        "avg_log_lines": 4.21,
+        "avg_evidence_ratio": 0.79,
+        "avg_unrelated_services": 0.7,
+        "avg_distractors": 0.89,
+        "avg_errors_outside_evidence": 0.0
+      }
+    },
+    "sample_bad_records": []
   }
 }
