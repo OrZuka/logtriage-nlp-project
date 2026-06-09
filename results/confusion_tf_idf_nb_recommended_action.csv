@@ -1,0 +1,11 @@
+,no_action_monitor,rotate_or_check_credentials,check_payment_gateway_and_retry,scale_database_pool,check_database_query,sync_inventory_and_retry,scale_queue_consumers,rollback_or_fix_configuration,scale_resource_or_restart_service,rollback_deployment
+no_action_monitor,75,0,0,0,0,0,0,0,0,0
+rotate_or_check_credentials,0,75,0,0,0,0,0,0,0,0
+check_payment_gateway_and_retry,0,0,75,0,0,0,0,0,0,0
+scale_database_pool,0,0,0,75,0,0,0,0,0,0
+check_database_query,0,0,0,0,75,0,0,0,0,0
+sync_inventory_and_retry,0,0,0,0,0,75,0,0,0,0
+scale_queue_consumers,0,0,0,0,0,0,75,0,0,0
+rollback_or_fix_configuration,0,0,0,0,0,0,0,75,0,0
+scale_resource_or_restart_service,0,0,0,0,0,0,0,0,75,0
+rollback_deployment,0,0,0,0,0,0,0,0,0,75

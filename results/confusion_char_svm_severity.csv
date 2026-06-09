@@ -1,0 +1,5 @@
+,low,medium,high,critical
+low,75,0,0,0
+medium,1,143,21,13
+high,1,134,37,144
+critical,0,7,15,159

@@ -1,0 +1,50 @@
+{
+  "failure_cause": [
+    "normal_no_issue",
+    "authentication_token_expired",
+    "payment_gateway_timeout",
+    "database_connection_pool_exhaustion",
+    "database_query_failure",
+    "inventory_out_of_sync",
+    "message_queue_backlog",
+    "configuration_error",
+    "resource_exhaustion",
+    "deployment_regression"
+  ],
+  "affected_service": [
+    "gateway-service",
+    "auth-service",
+    "cart-service",
+    "checkout-service",
+    "payment-service",
+    "order-service",
+    "inventory-service",
+    "shipping-service",
+    "notification-service",
+    "database-service",
+    "queue-service",
+    "catalog-service"
+  ],
+  "severity": [
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "recommended_action": [
+    "no_action_monitor",
+    "rotate_or_check_credentials",
+    "check_payment_gateway_and_retry",
+    "scale_database_pool",
+    "check_database_query",
+    "sync_inventory_and_retry",
+    "scale_queue_consumers",
+    "rollback_or_fix_configuration",
+    "scale_resource_or_restart_service",
+    "rollback_deployment"
+  ],
+  "notes": {
+    "domain": "fictional e-commerce microservice system",
+    "evidence_lines": "1-based indices of log lines that directly support the failure cause and action"
+  }
+}

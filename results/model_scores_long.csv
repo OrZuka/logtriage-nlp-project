@@ -1,0 +1,9 @@
+model,target,accuracy,macro_f1
+Rule-based baseline,failure_cause,0.984,0.983740425623905
+Rule-based baseline,affected_service,0.984,0.9815040953140611
+Rule-based baseline,severity,0.504,0.4770126725205967
+Rule-based baseline,recommended_action,0.9853333333333333,0.9816815622236764
+TF-IDF + Linear SVM,failure_cause,1.0,1.0
+TF-IDF + Linear SVM,affected_service,1.0,1.0
+TF-IDF + Linear SVM,severity,0.5093333333333333,0.5827420932382764
+TF-IDF + Linear SVM,recommended_action,1.0,1.0

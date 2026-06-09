@@ -1,0 +1,3 @@
+model,openai_model,n_evaluated,cause_macro_f1,service_macro_f1,severity_macro_f1,action_macro_f1,full_exact,evidence_f1,valid_json_rate
+LLM zero-shot,gpt-4o-mini,30,1.0,0.7338095238095238,0.4412087912087912,1.0,0.3,0.9424083769633508,1.0
+LLM few-shot,gpt-4o-mini,30,1.0,1.0,0.6428571428571428,1.0,0.5333333333333333,0.99,1.0

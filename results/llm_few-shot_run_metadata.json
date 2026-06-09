@@ -1,0 +1,10 @@
+{
+  "mode": "few-shot",
+  "openai_model": "gpt-4o-mini",
+  "limit": 30,
+  "n_evaluated": 30,
+  "shots": 4,
+  "temperature": 0.0,
+  "predictions_file": "llm_few-shot_predictions.jsonl",
+  "metrics_file": "llm_few-shot_metrics.csv"
+}

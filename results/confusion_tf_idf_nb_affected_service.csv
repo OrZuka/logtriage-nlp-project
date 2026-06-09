@@ -1,0 +1,13 @@
+,gateway-service,auth-service,cart-service,checkout-service,payment-service,order-service,inventory-service,shipping-service,notification-service,database-service,queue-service,catalog-service
+gateway-service,73,0,0,2,0,0,0,0,0,0,0,0
+auth-service,0,75,0,0,0,0,0,0,0,0,0,0
+cart-service,0,0,0,0,0,0,0,0,0,0,0,0
+checkout-service,0,0,0,225,0,0,0,0,0,0,0,0
+payment-service,0,0,0,0,75,0,0,0,0,0,0,0
+order-service,0,0,0,0,0,0,0,0,0,0,0,0
+inventory-service,0,0,0,0,0,0,75,0,0,0,0,0
+shipping-service,0,0,0,0,0,0,0,0,0,0,0,0
+notification-service,0,0,0,0,0,0,0,0,0,0,0,0
+database-service,0,0,0,0,0,0,0,0,0,150,0,0
+queue-service,0,0,0,0,0,0,0,0,0,0,75,0
+catalog-service,0,0,0,0,0,0,0,0,0,0,0,0

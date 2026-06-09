@@ -1,0 +1,12 @@
+{
+  "hf_model": "distilroberta-base",
+  "train_limit": 300,
+  "test_limit": 75,
+  "n_train": 300,
+  "n_valid": 60,
+  "n_test": 75,
+  "epochs": 2,
+  "batch_size": 8,
+  "max_length": 256,
+  "device": "cpu"
+}

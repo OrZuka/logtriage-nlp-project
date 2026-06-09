@@ -1,0 +1,11 @@
+,normal_no_issue,authentication_token_expired,payment_gateway_timeout,database_connection_pool_exhaustion,database_query_failure,inventory_out_of_sync,message_queue_backlog,configuration_error,resource_exhaustion,deployment_regression
+normal_no_issue,0,75,0,0,0,0,0,0,0,0
+authentication_token_expired,0,75,0,0,0,0,0,0,0,0
+payment_gateway_timeout,0,75,0,0,0,0,0,0,0,0
+database_connection_pool_exhaustion,0,75,0,0,0,0,0,0,0,0
+database_query_failure,0,75,0,0,0,0,0,0,0,0
+inventory_out_of_sync,0,75,0,0,0,0,0,0,0,0
+message_queue_backlog,0,75,0,0,0,0,0,0,0,0
+configuration_error,0,75,0,0,0,0,0,0,0,0
+resource_exhaustion,0,75,0,0,0,0,0,0,0,0
+deployment_regression,0,75,0,0,0,0,0,0,0,0

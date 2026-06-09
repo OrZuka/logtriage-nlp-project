@@ -1,0 +1,5 @@
+model,target,accuracy,macro_f1
+TF-IDF + Logistic Regression,failure_cause,1.0,1.0
+TF-IDF + Logistic Regression,affected_service,1.0,1.0
+TF-IDF + Logistic Regression,severity,0.5093333333333333,0.5827420932382764
+TF-IDF + Logistic Regression,recommended_action,1.0,1.0

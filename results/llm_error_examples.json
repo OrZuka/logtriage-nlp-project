@@ -1,0 +1,391 @@
+[
+  {
+    "model": "LLM zero-shot",
+    "session_id": "sess_03239",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "critical"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM zero-shot",
+    "session_id": "sess_03339",
+    "wrong_fields": [
+      "affected_service",
+      "severity"
+    ],
+    "gold": {
+      "affected_service": "payment-service",
+      "severity": "medium"
+    },
+    "prediction": {
+      "affected_service": "checkout-service",
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM zero-shot",
+    "session_id": "sess_04474",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "critical"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM zero-shot",
+    "session_id": "sess_03633",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "critical"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM zero-shot",
+    "session_id": "sess_02876",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "high"
+    },
+    "prediction": {
+      "severity": "medium"
+    }
+  },
+  {
+    "model": "LLM zero-shot",
+    "session_id": "sess_02172",
+    "wrong_fields": [
+      "affected_service",
+      "severity"
+    ],
+    "gold": {
+      "affected_service": "database-service",
+      "severity": "critical"
+    },
+    "prediction": {
+      "affected_service": "checkout-service",
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM zero-shot",
+    "session_id": "sess_00457",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "critical"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM zero-shot",
+    "session_id": "sess_04838",
+    "wrong_fields": [
+      "affected_service"
+    ],
+    "gold": {
+      "affected_service": "inventory-service"
+    },
+    "prediction": {
+      "affected_service": "checkout-service"
+    }
+  },
+  {
+    "model": "LLM zero-shot",
+    "session_id": "sess_02540",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "high"
+    },
+    "prediction": {
+      "severity": "medium"
+    }
+  },
+  {
+    "model": "LLM zero-shot",
+    "session_id": "sess_00062",
+    "wrong_fields": [
+      "affected_service",
+      "severity"
+    ],
+    "gold": {
+      "affected_service": "database-service",
+      "severity": "medium"
+    },
+    "prediction": {
+      "affected_service": "order-service",
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM zero-shot",
+    "session_id": "sess_02193",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "medium"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM zero-shot",
+    "session_id": "sess_04035",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "critical"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM zero-shot",
+    "session_id": "sess_03729",
+    "wrong_fields": [
+      "affected_service",
+      "severity"
+    ],
+    "gold": {
+      "affected_service": "database-service",
+      "severity": "medium"
+    },
+    "prediction": {
+      "affected_service": "order-service",
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM zero-shot",
+    "session_id": "sess_02410",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "critical"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM zero-shot",
+    "session_id": "sess_02177",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "medium"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM few-shot",
+    "session_id": "sess_03239",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "critical"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM few-shot",
+    "session_id": "sess_03339",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "medium"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM few-shot",
+    "session_id": "sess_04474",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "critical"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM few-shot",
+    "session_id": "sess_03633",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "critical"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM few-shot",
+    "session_id": "sess_04195",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "high"
+    },
+    "prediction": {
+      "severity": "critical"
+    }
+  },
+  {
+    "model": "LLM few-shot",
+    "session_id": "sess_00118",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "medium"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM few-shot",
+    "session_id": "sess_02193",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "medium"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM few-shot",
+    "session_id": "sess_04035",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "critical"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM few-shot",
+    "session_id": "sess_02410",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "critical"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM few-shot",
+    "session_id": "sess_02177",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "medium"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM few-shot",
+    "session_id": "sess_02304",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "critical"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM few-shot",
+    "session_id": "sess_04959",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "medium"
+    },
+    "prediction": {
+      "severity": "high"
+    }
+  },
+  {
+    "model": "LLM few-shot",
+    "session_id": "sess_00108",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "high"
+    },
+    "prediction": {
+      "severity": "medium"
+    }
+  },
+  {
+    "model": "LLM few-shot",
+    "session_id": "sess_02749",
+    "wrong_fields": [
+      "severity"
+    ],
+    "gold": {
+      "severity": "high"
+    },
+    "prediction": {
+      "severity": "critical"
+    }
+  }
+]

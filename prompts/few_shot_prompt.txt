@@ -1,0 +1,1 @@
+Use 3-5 solved training examples, then solve the target log session. Return valid JSON only.

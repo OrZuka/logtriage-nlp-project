@@ -1,0 +1,1 @@
+You are an SRE assistant. Given a log session, predict JSON fields: failure_cause, affected_service, severity, recommended_action, evidence_lines. Use only labels from data/label_taxonomy.json. Log session: {log_session}

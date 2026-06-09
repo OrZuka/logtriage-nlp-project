@@ -1,0 +1,216 @@
+[
+  {
+    "session_id": "sess_03239",
+    "domain": "ecommerce_microservices",
+    "noise_level": "medium",
+    "log_format": "mixed",
+    "logs": [
+      "[1] 2026-05-01 10:14:01 service=notification-service level=INFO msg=\"heartbeat ok instance=1\"",
+      "[2] 2026-05-01 10:14:02 service=order-service level=INFO msg=\"feature_flag fast_inventory=enabled\"",
+      "[3] 2026-05-01 10:14:03 checkout-service INFO loading runtime configuration version=4567",
+      "[4] 2026-05-01 10:14:04 service=checkout-service level=ERROR msg=\"missing required config PAYMENT_PROVIDER_URL\"",
+      "[5] 2026-05-01 10:14:05 service=payment-service level=ERROR msg=\"cannot initialize payment client because endpoint is empty\"",
+      "[6] 2026-05-01 10:14:06 service=gateway-service level=ERROR msg=\"status=500 route=/checkout reason=configuration_error\"",
+      "[7] 2026-05-01 10:14:07 service=database-service level=INFO msg=\"feature_flag async_orders=enabled\"",
+      "[8] 2026-05-01 10:14:08 service=cart-service level=INFO msg=\"cache hit key=cart\""
+    ],
+    "labels": {
+      "failure_cause": "configuration_error",
+      "affected_service": "checkout-service",
+      "severity": "critical",
+      "recommended_action": "rollback_or_fix_configuration",
+      "evidence_lines": [
+        4,
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "session_id": "sess_03339",
+    "domain": "ecommerce_microservices",
+    "noise_level": "medium",
+    "log_format": "mixed",
+    "logs": [
+      "[1] 2026-05-01 10:14:01 inventory-service INFO feature_flag new_checkout=enabled",
+      "[2] 2026-05-01 10:14:02 catalog-service INFO feature_flag new_checkout=enabled",
+      "[3] 2026-05-01 10:14:03 gateway-service INFO POST /checkout request_id=dea1",
+      "[4] 2026-05-01 10:14:04 payment-service WARN provider=PayBox attempt=1 timeout_after_ms=2000",
+      "[5] 2026-05-01 10:14:05 service=payment-service level=ERROR msg=\"external payment gateway timeout after 3 retries\"",
+      "[6] 2026-05-01 10:14:06 checkout-service ERROR payment authorization failed status=provider_timeout",
+      "[7] 2026-05-01 10:14:07 gateway-service ERROR status=503 route=/checkout latency_ms=6612",
+      "[8] 2026-05-01 10:14:08 payment-service INFO cache hit key=cart",
+      "[9] 2026-05-01 10:14:09 cart-service INFO feature_flag new_checkout=enabled"
+    ],
+    "labels": {
+      "failure_cause": "payment_gateway_timeout",
+      "affected_service": "payment-service",
+      "severity": "medium",
+      "recommended_action": "check_payment_gateway_and_retry",
+      "evidence_lines": [
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "session_id": "sess_04474",
+    "domain": "ecommerce_microservices",
+    "noise_level": "low",
+    "log_format": "json_like",
+    "logs": [
+      "[1] {\"ts\":\"2026-05-01 10:14:01\",\"service\":\"cart-service\",\"level\":\"INFO\",\"msg\":\"INFO metrics cpu=32% mem=1171MB\"}",
+      "[2] {\"ts\":\"2026-05-01 10:14:02\",\"service\":\"checkout-service\",\"level\":\"INFO\",\"msg\":\"loading runtime configuration version=2437\"}",
+      "[3] {\"ts\":\"2026-05-01 10:14:03\",\"service\":\"checkout-service\",\"level\":\"ERROR\",\"msg\":\"missing required config PAYMENT_PROVIDER_URL\"}",
+      "[4] {\"ts\":\"2026-05-01 10:14:04\",\"service\":\"payment-service\",\"level\":\"ERROR\",\"msg\":\"cannot initialize payment client because endpoint is empty\"}",
+      "[5] {\"ts\":\"2026-05-01 10:14:05\",\"service\":\"gateway-service\",\"level\":\"ERROR\",\"msg\":\"status=500 route=/checkout reason=configuration_error\"}",
+      "[6] {\"ts\":\"2026-05-01 10:14:06\",\"service\":\"auth-service\",\"level\":\"INFO\",\"msg\":\"WARN slow request latency_ms=465\"}"
+    ],
+    "labels": {
+      "failure_cause": "configuration_error",
+      "affected_service": "checkout-service",
+      "severity": "critical",
+      "recommended_action": "rollback_or_fix_configuration",
+      "evidence_lines": [
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "session_id": "sess_03633",
+    "domain": "ecommerce_microservices",
+    "noise_level": "medium",
+    "log_format": "plain",
+    "logs": [
+      "[1] 2026-05-01 10:14:01 inventory-service INFO heartbeat ok instance=1",
+      "[2] 2026-05-01 10:14:02 inventory-service INFO feature_flag fast_inventory=enabled",
+      "[3] 2026-05-01 10:14:03 gateway-service INFO routing checkout traffic to version=v3575",
+      "[4] 2026-05-01 10:14:04 checkout-service WARN error rate increased after deployment version=v440",
+      "[5] 2026-05-01 10:14:05 checkout-service ERROR NullPointerException in CheckoutController.validateCoupons",
+      "[6] 2026-05-01 10:14:06 gateway-service ERROR status=500 route=/checkout recent_deploy=true",
+      "[7] 2026-05-01 10:14:07 queue-service WARN slow request latency_ms=1098",
+      "[8] 2026-05-01 10:14:08 gateway-service INFO feature_flag fast_inventory=enabled"
+    ],
+    "labels": {
+      "failure_cause": "deployment_regression",
+      "affected_service": "checkout-service",
+      "severity": "critical",
+      "recommended_action": "rollback_deployment",
+      "evidence_lines": [
+        4,
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "session_id": "sess_02876",
+    "domain": "ecommerce_microservices",
+    "noise_level": "high",
+    "log_format": "plain",
+    "logs": [
+      "[1] 2026-05-01 10:14:01 shipping-service INFO feature_flag fast_inventory=enabled",
+      "[2] 2026-05-01 10:14:02 notification-service INFO metrics cpu=54% mem=1438MB",
+      "[3] 2026-05-01 10:14:03 payment-service INFO heartbeat ok instance=2",
+      "[4] 2026-05-01 10:14:04 order-service INFO publishing order_created event order_id=7046",
+      "[5] 2026-05-01 10:14:05 queue-service WARN topic=order-events lag=9363 consumers=2",
+      "[6] 2026-05-01 10:14:06 queue-service ERROR message queue backlog exceeded threshold",
+      "[7] 2026-05-01 10:14:07 notification-service WARN confirmation email delayed due to queue lag",
+      "[8] 2026-05-01 10:14:08 inventory-service INFO healthcheck status=ok",
+      "[9] 2026-05-01 10:14:09 notification-service INFO metrics cpu=45% mem=1974MB",
+      "[10] 2026-05-01 10:14:10 order-service INFO healthcheck status=ok"
+    ],
+    "labels": {
+      "failure_cause": "message_queue_backlog",
+      "affected_service": "queue-service",
+      "severity": "high",
+      "recommended_action": "scale_queue_consumers",
+      "evidence_lines": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "session_id": "sess_04195",
+    "domain": "ecommerce_microservices",
+    "noise_level": "medium",
+    "log_format": "json_like",
+    "logs": [
+      "[1] {\"ts\":\"2026-05-01 10:14:01\",\"service\":\"shipping-service\",\"level\":\"INFO\",\"msg\":\"WARN slow request latency_ms=599\"}",
+      "[2] {\"ts\":\"2026-05-01 10:14:02\",\"service\":\"shipping-service\",\"level\":\"INFO\",\"msg\":\"DEBUG cache hit key=cart\"}",
+      "[3] {\"ts\":\"2026-05-01 10:14:03\",\"service\":\"checkout-service\",\"level\":\"INFO\",\"msg\":\"starting checkout transaction cart_id=9015\"}",
+      "[4] {\"ts\":\"2026-05-01 10:14:04\",\"service\":\"database-service\",\"level\":\"WARN\",\"msg\":\"db.pool.active=100 db.pool.max=100 waiters=9765\"}",
+      "[5] {\"ts\":\"2026-05-01 10:14:05\",\"service\":\"database-service\",\"level\":\"ERROR\",\"msg\":\"failed to acquire database connection after 2000ms\"}",
+      "[6] {\"ts\":\"2026-05-01 10:14:06\",\"service\":\"payment-service\",\"level\":\"ERROR\",\"msg\":\"payment lookup failed reason=db_connection_unavailable\"}",
+      "[7] {\"ts\":\"2026-05-01 10:14:07\",\"service\":\"gateway-service\",\"level\":\"ERROR\",\"msg\":\"status=503 route=/checkout latency_ms=3315\"}",
+      "[8] {\"ts\":\"2026-05-01 10:14:08\",\"service\":\"inventory-service\",\"level\":\"INFO\",\"msg\":\"DEBUG feature_flag new_checkout=enabled\"}",
+      "[9] {\"ts\":\"2026-05-01 10:14:09\",\"service\":\"auth-service\",\"level\":\"INFO\",\"msg\":\"DEBUG cache hit key=cart\"}"
+    ],
+    "labels": {
+      "failure_cause": "database_connection_pool_exhaustion",
+      "affected_service": "database-service",
+      "severity": "high",
+      "recommended_action": "scale_database_pool",
+      "evidence_lines": [
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "session_id": "sess_00118",
+    "domain": "ecommerce_microservices",
+    "noise_level": "none",
+    "log_format": "plain",
+    "logs": [
+      "[1] 2026-05-01 10:14:01 order-service INFO publishing order_created event order_id=8051",
+      "[2] 2026-05-01 10:14:02 queue-service WARN topic=order-events lag=5532 consumers=2",
+      "[3] 2026-05-01 10:14:03 queue-service ERROR message queue backlog exceeded threshold",
+      "[4] 2026-05-01 10:14:04 notification-service WARN confirmation email delayed due to queue lag"
+    ],
+    "labels": {
+      "failure_cause": "message_queue_backlog",
+      "affected_service": "queue-service",
+      "severity": "medium",
+      "recommended_action": "scale_queue_consumers",
+      "evidence_lines": [
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "session_id": "sess_02172",
+    "domain": "ecommerce_microservices",
+    "noise_level": "none",
+    "log_format": "plain",
+    "logs": [
+      "[1] 2026-05-01 10:14:01 checkout-service INFO starting checkout transaction cart_id=1368",
+      "[2] 2026-05-01 10:14:02 database-service WARN db.pool.active=100 db.pool.max=100 waiters=229",
+      "[3] 2026-05-01 10:14:03 database-service ERROR failed to acquire database connection after 2000ms",
+      "[4] 2026-05-01 10:14:04 payment-service ERROR payment lookup failed reason=db_connection_unavailable",
+      "[5] 2026-05-01 10:14:05 gateway-service ERROR status=503 route=/checkout latency_ms=1894"
+    ],
+    "labels": {
+      "failure_cause": "database_connection_pool_exhaustion",
+      "affected_service": "database-service",
+      "severity": "critical",
+      "recommended_action": "scale_database_pool",
+      "evidence_lines": [
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  }
+]

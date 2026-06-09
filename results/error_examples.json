@@ -1,0 +1,584 @@
+[
+  {
+    "model": "Majority",
+    "session_id": "sess_03239",
+    "wrong_fields": [
+      "failure_cause",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "configuration_error",
+      "severity": "critical",
+      "recommended_action": "rollback_or_fix_configuration"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_03339",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "payment_gateway_timeout",
+      "affected_service": "payment-service",
+      "severity": "medium",
+      "recommended_action": "check_payment_gateway_and_retry"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_04474",
+    "wrong_fields": [
+      "failure_cause",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "configuration_error",
+      "severity": "critical",
+      "recommended_action": "rollback_or_fix_configuration"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_03633",
+    "wrong_fields": [
+      "failure_cause",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "deployment_regression",
+      "severity": "critical",
+      "recommended_action": "rollback_deployment"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_02876",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "message_queue_backlog",
+      "affected_service": "queue-service",
+      "recommended_action": "scale_queue_consumers"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_04195",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "database_connection_pool_exhaustion",
+      "affected_service": "database-service",
+      "recommended_action": "scale_database_pool"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_00118",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "message_queue_backlog",
+      "affected_service": "queue-service",
+      "severity": "medium",
+      "recommended_action": "scale_queue_consumers"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_02172",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "database_connection_pool_exhaustion",
+      "affected_service": "database-service",
+      "severity": "critical",
+      "recommended_action": "scale_database_pool"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_00457",
+    "wrong_fields": [
+      "failure_cause",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "resource_exhaustion",
+      "severity": "critical",
+      "recommended_action": "scale_resource_or_restart_service"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_04838",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "inventory_out_of_sync",
+      "affected_service": "inventory-service",
+      "recommended_action": "sync_inventory_and_retry"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_02540",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "message_queue_backlog",
+      "affected_service": "queue-service",
+      "recommended_action": "scale_queue_consumers"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_00163",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "inventory_out_of_sync",
+      "affected_service": "inventory-service",
+      "recommended_action": "sync_inventory_and_retry"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_00062",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service",
+      "severity"
+    ],
+    "gold": {
+      "failure_cause": "database_query_failure",
+      "affected_service": "database-service",
+      "severity": "medium"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service",
+      "severity": "high"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_02193",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "inventory_out_of_sync",
+      "affected_service": "inventory-service",
+      "severity": "medium",
+      "recommended_action": "sync_inventory_and_retry"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_04035",
+    "wrong_fields": [
+      "failure_cause",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "configuration_error",
+      "severity": "critical",
+      "recommended_action": "rollback_or_fix_configuration"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_03729",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service",
+      "severity"
+    ],
+    "gold": {
+      "failure_cause": "database_query_failure",
+      "affected_service": "database-service",
+      "severity": "medium"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service",
+      "severity": "high"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_02410",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "payment_gateway_timeout",
+      "affected_service": "payment-service",
+      "severity": "critical",
+      "recommended_action": "check_payment_gateway_and_retry"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_02177",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "payment_gateway_timeout",
+      "affected_service": "payment-service",
+      "severity": "medium",
+      "recommended_action": "check_payment_gateway_and_retry"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_00715",
+    "wrong_fields": [
+      "failure_cause",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "configuration_error",
+      "recommended_action": "rollback_or_fix_configuration"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_02304",
+    "wrong_fields": [
+      "failure_cause",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "configuration_error",
+      "severity": "critical",
+      "recommended_action": "rollback_or_fix_configuration"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_04959",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "message_queue_backlog",
+      "affected_service": "queue-service",
+      "severity": "medium",
+      "recommended_action": "scale_queue_consumers"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_04522",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "payment_gateway_timeout",
+      "affected_service": "payment-service",
+      "recommended_action": "check_payment_gateway_and_retry"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_03685",
+    "wrong_fields": [
+      "failure_cause",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "resource_exhaustion",
+      "severity": "critical",
+      "recommended_action": "scale_resource_or_restart_service"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_00373",
+    "wrong_fields": [
+      "affected_service",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "affected_service": "auth-service",
+      "severity": "medium",
+      "recommended_action": "rotate_or_check_credentials"
+    },
+    "prediction": {
+      "affected_service": "checkout-service",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_04813",
+    "wrong_fields": [
+      "failure_cause",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "configuration_error",
+      "recommended_action": "rollback_or_fix_configuration"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_00108",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service"
+    ],
+    "gold": {
+      "failure_cause": "database_query_failure",
+      "affected_service": "database-service"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_02749",
+    "wrong_fields": [
+      "failure_cause",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "resource_exhaustion",
+      "recommended_action": "scale_resource_or_restart_service"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_04591",
+    "wrong_fields": [
+      "affected_service",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "affected_service": "auth-service",
+      "severity": "medium",
+      "recommended_action": "rotate_or_check_credentials"
+    },
+    "prediction": {
+      "affected_service": "checkout-service",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_03281",
+    "wrong_fields": [
+      "failure_cause",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "resource_exhaustion",
+      "severity": "critical",
+      "recommended_action": "scale_resource_or_restart_service"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  },
+  {
+    "model": "Majority",
+    "session_id": "sess_04323",
+    "wrong_fields": [
+      "failure_cause",
+      "affected_service",
+      "severity",
+      "recommended_action"
+    ],
+    "gold": {
+      "failure_cause": "normal_no_issue",
+      "affected_service": "gateway-service",
+      "severity": "low",
+      "recommended_action": "no_action_monitor"
+    },
+    "prediction": {
+      "failure_cause": "authentication_token_expired",
+      "affected_service": "checkout-service",
+      "severity": "high",
+      "recommended_action": "check_database_query"
+    }
+  }
+]

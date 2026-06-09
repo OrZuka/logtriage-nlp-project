@@ -1,0 +1,11 @@
+{
+  "failure_cause_accuracy": 0.984,
+  "failure_cause_macro_f1": 0.983740425623905,
+  "affected_service_accuracy": 0.984,
+  "affected_service_macro_f1": 0.9815040953140611,
+  "severity_accuracy": 0.504,
+  "severity_macro_f1": 0.4770126725205967,
+  "recommended_action_accuracy": 0.9853333333333333,
+  "recommended_action_macro_f1": 0.9816815622236764,
+  "exact_match_all_labels": 0.496
+}

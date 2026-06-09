@@ -1,0 +1,16 @@
+statistic,value
+total_examples,5000.0
+train_examples,3500.0
+validation_examples,750.0
+test_examples,750.0
+failure_causes,10.0
+affected_services,7.0
+severity_levels,4.0
+recommended_actions,10.0
+avg_log_lines,7.67
+median_log_lines,8.0
+avg_evidence_lines,3.3
+noise_low,1311.0
+noise_medium,1805.0
+noise_high,1250.0
+validation_issues,0.0

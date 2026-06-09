@@ -1,0 +1,10 @@
+{
+  "num_records": 5000,
+  "issues": 0,
+  "issue_examples": [],
+  "splits": {
+    "train": 3500,
+    "valid": 750,
+    "test": 750
+  }
+}

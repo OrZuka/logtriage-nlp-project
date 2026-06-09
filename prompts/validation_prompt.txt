@@ -1,0 +1,1 @@
+Validate a LogTriage example: schema, label validity, evidence-line support, affected service, severity, action, contradictions, and naturalness. Return JSON: {"valid": true/false, "issues": [], "suggested_fix": {}}.
